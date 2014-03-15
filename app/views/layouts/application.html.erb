@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Associations | <%= yield(:title) %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+
+
+</head>
+<body>
+
+|<a href="/books" name="books" style="color:blue">Books home</a>|
+<a href="/authors" name="authors" style="color:red">Authors home</a>|
+<a href="/publishers" name="publishers" style="color:green">Publishers home</a>|</br></br>
+
+<%= yield %>
+
+</body>
+</html>

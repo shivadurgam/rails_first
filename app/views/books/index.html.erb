@@ -1,0 +1,34 @@
+<% provide(:title, 'Books') %>
+<h1 style="color:maroon">Books:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="color:blue">Book name</th>
+      <th style="color:red">Edition</th>
+      <th style="color:green">Languaue</th>
+      <th>Author_id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.book_name %></td>
+        <td><%= book.edition %></td>
+        <td><%= book.languaue %></td>
+        <td><a href="/display_authors"> <%= $book1 = book.author_id %></a></td>
+        <td><%= link_to 'Show', book %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book', new_book_path %>
